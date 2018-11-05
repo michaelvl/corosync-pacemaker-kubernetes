@@ -4,7 +4,7 @@ set -e
 
 COROSYNC_CONF=/dev/stdout
 #COROSYNC_CONF=/etc/corosync/corosync.conf
-#COROSYNC_AUTHKEY=/etc/corosync/authkey
+COROSYNC_AUTHKEY=/etc/corosync/authkey
 
 
 RING0_ADDRS="192.168.122.240 192.168.122.241"

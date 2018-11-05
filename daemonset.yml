@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: coropace
+spec:
+  selector:
+    matchLabels:
+      name: coropace
+  template:
+    metadata:
+      labels:
+        name: coropace
+    spec:
+      hostNetwork: true
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: coropace
+        image: coropace
+        imagePullPolicy: Never
+        volumeMounts:
+        - name: etc-corosync
+          mountPath: /etc/corosync
+          readOnly: true
+      volumes:
+      - name: etc-corosync
+        secret:
+          secretName: etc-corosync

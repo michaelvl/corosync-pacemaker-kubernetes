@@ -1,4 +1,4 @@
-## Proof-of-concept for running Corosync and Pacemaker within a container.
+## Proof-of-concept for running Corosync and Pacemaker within Kubernetes
 
 The current hard-coded configuration assumes two hosts with IP addresses
 192.168.122.240 and 192.168.122.241.
